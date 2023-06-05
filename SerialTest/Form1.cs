@@ -19,7 +19,7 @@ namespace SerialTest
         {
             if (commStart == false)
             {
-                serialPort1.BaudRate = 9600;
+                serialPort1.BaudRate = 115200;
                 serialPort1.Parity = Parity.None;
                 serialPort1.DataBits = 8;
                 serialPort1.StopBits = StopBits.One;
@@ -80,6 +80,9 @@ namespace SerialTest
 
         private void button5_Click(object sender, EventArgs e)
         {
+            if (commStart == true)
+                serialPort1.Close();
+
             this.Close();
         }
     }
